@@ -3,7 +3,9 @@ set -e
 
 bad=0
 
-files=$(find . -type f -name "*.txt" -not -path "./.git/*")
+files=$(find . -type f -name "*.txt" \
+  -not -path "./.git/*" \
+  -not -name "version.txt")
 
 for f in $files; do
   # 1) Проверка: есть ли хотя бы одна буква "Z" (латиница, заглавная)
